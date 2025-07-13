@@ -50,6 +50,12 @@ python main.py --dataset=pubmed
 python main.py --dataset=tfinance
 ```
 
+### 2.4 Visualizations
+![CAGAD Result 1](figures/CAGAD_result1.png)
+![CAGAD Result 2](figures/CAGAD_result2.png)
+![CAGAD Result 3](figures/CAGAD_result3.png)
+![CAGAD Result 4](figures/CAGAD_result4.png)
+
 ## 3. ARC: Generalist Graph Anomaly Detection with In-Context Learning (https://github.com/yixinliu233/ARC)
 
 ### 3.1 Environment Setup
@@ -85,6 +91,11 @@ cd models/arc
 # Run with 5 trials and 10-shot learning
 python main.py --trial 5 --shot 10
 ```
+
+### 3.4 Visualizations
+![CAGAD Result 1](figures/GDN_result1.png)
+![CAGAD Result 2](figures/GDN_result2.png)
+
 
 ## 4. GDN: Graph Anomaly Detection with Feature Decomposition (https://github.com/blacksingular/wsdm_GDN)
 
@@ -122,6 +133,10 @@ python main.py --config ./config/amazon.yml
 # Run on Weibo dataset
 python main.py --config ./config/weibo.yml
 ```
+
+### 4.4 Visualizations
+![CAGAD Result 1](figures/ARC.png)
+![CAGAD Result 2](figures/ARC.png)
 
 ## 5. Results
 
