@@ -135,8 +135,8 @@ python main.py --config ./config/weibo.yml
 ```
 
 ### 4.4 Visualizations
-![CAGAD Result 1](figures/ARC.png)
-![CAGAD Result 2](figures/ARC.png)
+![ARC Result 1](figures/ARC.png)
+![ARC Result 2](figures/ARC.png)
 
 ## 5. Results
 
