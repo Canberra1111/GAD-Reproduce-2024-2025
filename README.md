@@ -93,8 +93,8 @@ python main.py --trial 5 --shot 10
 ```
 
 ### 3.4 Visualizations
-![CAGAD Result 1](figures/GDN_result1.png)
-![CAGAD Result 2](figures/GDN_result2.png)
+![GDN Result 1](figures/GDN_result1.png)
+![GDN Result 2](figures/GDN_result2.png)
 
 
 ## 4. GDN: Graph Anomaly Detection with Feature Decomposition (https://github.com/blacksingular/wsdm_GDN)
@@ -135,8 +135,8 @@ python main.py --config ./config/weibo.yml
 ```
 
 ### 4.4 Visualizations
-![ARC Result 1](figures/ARC.png)
-![ARC Result 2](figures/ARC.png)
+![ARC Result 1](figures/ARC_result1.png)
+![ARC Result 2](figures/ARC_result2.png)
 
 ## 5. Results
 
