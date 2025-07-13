@@ -1,0 +1,92 @@
+25-07-11 10:08:52.703 - INFO:   name: Feature
+  phase: train
+  gpu_ids: [0, 1]
+  path:[
+    log: experiments/Feature_8_128_100/logs
+    tb_logger: experiments/Feature_8_128_100/tb_logger
+    results: experiments/Feature_8_128_100/results
+    checkpoint: experiments/Feature_8_128_100/checkpoint
+    resume_state: None
+    experiments_root: experiments/Feature_8_128_100
+  ]
+  datasets:[
+    train:[
+      name: smap_train
+      mode: HR
+      datatype: time
+      l_resolution: 8
+      r_resolution: 128
+      batch_size: 32
+      num_workers: 4
+      use_shuffle: False
+      data_len: -1
+    ]
+    val:[
+      name: smap_val
+      mode: HR
+      datatype: time
+      l_resolution: 8
+      r_resolution: 128
+      data_len: 3
+    ]
+  ]
+  model:[
+    which_model_G: sr3
+    finetune_norm: False
+    unet:[
+      in_channel: 2
+      out_channel: 1
+      inner_channel: 32
+      norm_groups: 16
+      channel_multiplier: [1, 2, 4, 8, 16]
+      attn_res: []
+      res_blocks: 1
+      dropout: 0
+    ]
+    beta_schedule:[
+      train:[
+        schedule: linear
+        n_timestep: 100
+        linear_start: 1e-06
+        linear_end: 0.01
+      ]
+      val:[
+        schedule: linear
+        N_label: 5000
+        n_timestep: 100
+        linear_start: 1e-06
+        linear_end: 0.01
+      ]
+    ]
+    diffusion:[
+      time_size: 128
+      channels: 1
+      conditional: True
+    ]
+  ]
+  train:[
+    n_epoch: 100
+    val_freq: 1000
+    save_checkpoint_freq: 1000
+    print_freq: 10
+    optimizer:[
+      type: adam
+      lr: 3e-06
+    ]
+    ema_scheduler:[
+      step_start_ema: 5000
+      update_ema_every: 1
+      ema_decay: 0.9999
+    ]
+  ]
+  wandb:[
+    project: distributed_time
+  ]
+  distributed: True
+  log_wandb_ckpt: False
+  log_eval: False
+  enable_wandb: False
+
+25-07-11 10:08:53.118 - INFO: Dataset [LRHRDataset - smap_train] is created.
+25-07-11 10:08:53.118 - INFO: Initial Dataset Finished
+25-07-11 10:08:53.471 - INFO: Initialization method [orthogonal]
